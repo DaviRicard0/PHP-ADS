@@ -84,8 +84,95 @@ $r->post('/exer5/resposta', function(){
         $calc *= $numero;
         $numero--;
     }
- 
-    echo "O fatorial de $num é $calc";   
+
+    echo "O fatorial de $num é $calc";
+});
+
+$r->get('/exer6/formulario', function(){
+    include("public/exer6.html");
+});
+
+$r->post('/exer6/resposta', function(){
+    $valorA = $_POST['valorA'];
+    $valorB = $_POST['valorB'];
+
+    if ($valorA == $valorB) {
+        echo "<p>Números iguais: $valorA</p>";
+    } else {
+        $menor = min($valorA, $valorB);
+        $maior = max($valorA, $valorB);
+        echo "<p>$menor $maior</p>";
+    }
+});
+
+$r->get('/exer7/formulario', function(){
+    include("public/exer7.html");
+});
+
+$r->post('/exer7/resposta', function(){
+    $metros = $_POST['metros'];
+
+    $centimetros = $metros * 100;
+    echo "<p>$metros metros equivalem a $centimetros centímetros.</p>";
+});
+
+$r->get('/exer8/formulario', function(){
+    include("public/exer8.html");
+});
+
+$r->post('/exer8/resposta', function(){
+    $metros_quadrados = $_POST['metros_quadrados'];
+
+    $litros_tinta = $metros_quadrados / 3;
+    $latas_tinta = ceil($litros_tinta / 18);
+    $preco_total = $latas_tinta * 80;
+
+    echo "<p>Para pintar uma área de $metros_quadrados metros quadrados, você precisará de:</p>";
+    echo "<p>- $litros_tinta litros de tinta;</p>";
+    echo "<p>- $latas_tinta latas de tinta;</p>";
+    echo "<p>O preço total será de R$ $preco_total.</p>";
+});
+
+$r->get('/exer9/formulario', function(){
+    include("public/exer9.html");
+});
+
+$r->post('/exer9/resposta', function(){
+     $ano_nascimento = $_POST['ano_nascimento'];
+
+     $ano_atual = date('Y');
+     $idade = $ano_atual - $ano_nascimento;
+     $dias_vividos = $idade * 365;
+     $idade_2025 = 2025 - $ano_nascimento;
+
+     echo "<p>A idade desta pessoa é: $idade anos.</p>";
+     echo "<p>Esta pessoa já viveu aproximadamente $dias_vividos dias.</p>";
+     echo "<p>Em 2025, esta pessoa terá $idade_2025 anos.</p>";
+});
+
+$r->get('/exer10/formulario', function(){
+    include("public/exer10.html");
+});
+
+$r->post('/exer10/resposta', function(){
+    $peso = $_POST['peso'];
+    $altura = $_POST['altura'];
+
+    $imc = $peso / ($altura * $altura);
+
+    if ($imc < 18.5) {
+        $condicao = "abaixo do peso";
+    } elseif ($imc >= 18.5 && $imc < 25) {
+        $condicao = "com peso normal";
+    } elseif ($imc >= 25 && $imc < 30) {
+        $condicao = "com sobrepeso";
+    } else {
+        $condicao = "com obesidade";
+    }
+
+    echo "<p>Seu IMC é: $imc.</p>";
+    echo "<p>Você está $condicao.</p>";
+    echo "<p>Para mais informações sobre o Índice de Massa Corporal, consulte: <a href='https://www.tuasaude.com/imc/'>tuasaude.com</a></p>";
 });
 
 #ROTAS
