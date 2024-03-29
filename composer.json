@@ -1,0 +1,18 @@
+{
+    "name": "php/primeiroprojeto",
+    "description": "Este é o meu primeiro projeto em PHP usando composer",
+    "version": "1.0.0",
+    "autoload": {
+        "psr-4": {
+            "Php\\Primeiroprojeto\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Aluno"
+        }
+    ],
+    "require": {
+        "govcms/require-dev": "^1.0"
+    }
+}

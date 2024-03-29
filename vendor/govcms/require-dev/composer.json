@@ -1,0 +1,13 @@
+{
+    "name": "govcms/require-dev",
+    "description": "Require-dev package definition for GovCMS 8",
+    "require-dev": {
+        "phpmd/phpmd": "2.7.0",
+        "phpunit/phpunit": "6.5",
+        "behat/behat": "^3.5",
+        "behat/gherkin": "^4.5",
+        "drupal/schema_metatag": "^1.4",
+        "jakub-onderka/php-parallel-lint": "^1.0",
+        "integratedexperts/behat-screenshot": "^0.7.2"
+    }
+}

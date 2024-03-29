@@ -1,0 +1,51 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "c5b506af2e496a7570324c5007fa96cb",
+    "packages": [
+        {
+            "name": "govcms/require-dev",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/govCMS/require-dev.git",
+                "reference": "ac0786ee2c85c8aa149798fbec48af49ebaf750a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/govCMS/require-dev/zipball/ac0786ee2c85c8aa149798fbec48af49ebaf750a",
+                "reference": "ac0786ee2c85c8aa149798fbec48af49ebaf750a",
+                "shasum": ""
+            },
+            "require-dev": {
+                "behat/behat": "^3.5",
+                "behat/gherkin": "^4.5",
+                "drupal/schema_metatag": "^1.4",
+                "integratedexperts/behat-screenshot": "^0.7.2",
+                "jakub-onderka/php-parallel-lint": "^1.0",
+                "phpmd/phpmd": "2.7.0",
+                "phpunit/phpunit": "6.5"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Require-dev package definition for GovCMS 8",
+            "support": {
+                "issues": "https://github.com/govCMS/require-dev/issues",
+                "source": "https://github.com/govCMS/require-dev/tree/1.0.0"
+            },
+            "time": "2019-10-14T04:28:41+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
+}
