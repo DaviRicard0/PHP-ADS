@@ -1,0 +1,122 @@
+-- MySQL dump 10.13  Distrib 8.0.36, for Linux (x86_64)
+--
+-- Host: 127.0.0.1    Database: projeto
+-- ------------------------------------------------------
+-- Server version	5.5.5-10.4.32-MariaDB
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `bebe`
+--
+
+DROP TABLE IF EXISTS `bebe`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `bebe` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) NOT NULL,
+  `peso` decimal(10,2) NOT NULL,
+  `sexo` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bebe`
+--
+
+/*!40000 ALTER TABLE `bebe` DISABLE KEYS */;
+#INSERT INTO `bebe` VALUES (1,'MAria',21.23,2);
+/*!40000 ALTER TABLE `bebe` ENABLE KEYS */;
+
+--
+-- Table structure for table `mae`
+--
+
+DROP TABLE IF EXISTS `mae`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `mae` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) NOT NULL,
+  `idade` int(11) NOT NULL,
+  `numero` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mae`
+--
+
+/*!40000 ALTER TABLE `mae` DISABLE KEYS */;
+#INSERT INTO `mae` VALUES (1,'MAria',657,'43545345'),(2,'MAria',657,'43545345');
+/*!40000 ALTER TABLE `mae` ENABLE KEYS */;
+
+--
+-- Table structure for table `medico`
+--
+
+DROP TABLE IF EXISTS `medico`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `medico` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) NOT NULL,
+  `crm` int(11) NOT NULL,
+  `numero` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `medico`
+--
+
+/*!40000 ALTER TABLE `medico` DISABLE KEYS */;
+#INSERT INTO `medico` VALUES (1,'asdasd',23,'asdasd'),(2,'Doutu',23123123,'23123123'),(3,'Doutu',231,'23123123');
+/*!40000 ALTER TABLE `medico` ENABLE KEYS */;
+
+--
+-- Table structure for table `vinculacao`
+--
+
+DROP TABLE IF EXISTS `vinculacao`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `vinculacao` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `medico_id` int(11) NOT NULL,
+  `mae_id` int(11) NOT NULL,
+  `bebe_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_vinculacao_medico_idx` (`medico_id`),
+  KEY `fk_vinculacao_bebe_idx` (`bebe_id`),
+  KEY `fk_vinculacao_mae_idx` (`mae_id`),
+  CONSTRAINT `fk_vinculacao_bebe` FOREIGN KEY (`bebe_id`) REFERENCES `bebe` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_vinculacao_mae` FOREIGN KEY (`mae_id`) REFERENCES `mae` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_vinculacao_medico` FOREIGN KEY (`medico_id`) REFERENCES `medico` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `vinculacao`
+--
+
+/*!40000 ALTER TABLE `vinculacao` DISABLE KEYS */;
+#INSERT INTO `vinculacao` VALUES (12,1,1,1),(13,1,2,1),(14,2,1,1);
+/*!40000 ALTER TABLE `vinculacao` ENABLE KEYS */;
+
+--
+-- Dumping routines for database 'projeto'
+--

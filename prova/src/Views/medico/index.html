@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Médico</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h3>Cadastro de Médico</h3>
+                <form action="/medico" method="post">
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome:</label>
+                        <input type="text" class="form-control" id="nome" name="nome" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="crm" class="form-label">Número do CRM:</label>
+                        <input type="number" class="form-control" id="crm" name="crm" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="numero" class="form-label">Número de contato:</label>
+                        <input type="text" class="form-control" id="numero" name="numero" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

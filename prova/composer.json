@@ -1,0 +1,17 @@
+{
+    "name": "php/projeto",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Php\\Projeto\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "DAvi"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
